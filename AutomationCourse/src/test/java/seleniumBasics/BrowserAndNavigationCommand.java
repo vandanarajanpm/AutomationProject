@@ -28,8 +28,8 @@ public class BrowserAndNavigationCommand extends Base{
 	public static void main(String[] args) {
 		BrowserAndNavigationCommand cmds = new BrowserAndNavigationCommand();
 		cmds.initializeBrowser();
-		//cmds.browserCommand();
-		cmds.navigationCommand();
+		cmds.browserCommand();
+		//cmds.navigationCommand();
 		
 
 	}
