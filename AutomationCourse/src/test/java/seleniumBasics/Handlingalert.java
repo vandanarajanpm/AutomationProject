@@ -19,13 +19,22 @@ public class Handlingalert extends Base {
 	Alert al=driver.switchTo().alert();
 	al.dismiss();
 	}
+	public void verifypromptAlert() {
+	driver.navigate().to("https://demoqa.com/alerts");
+	WebElement promptalert = driver.findElement(By.id("promtButton"));
+	promptalert.click();
+	Alert al=driver.switchTo().alert();
+	al.sendKeys("vandana");
+	al.accept();
+	
+	}
 
 	public static void main(String[] args) {
 		Handlingalert handling = new Handlingalert();
 		handling.initializeBrowser();
 		//handling.verifySimpleAlert();
-		handling.verifyConfirmAlert();
-
+		//handling.verifyConfirmAlert();
+        handling.verifypromptAlert();
 	}
 
 }
