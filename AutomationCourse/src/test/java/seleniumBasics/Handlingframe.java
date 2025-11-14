@@ -10,6 +10,15 @@ public class Handlingframe  extends Base{
 	driver.navigate().to("https://demoqa.com/frames");
 	List<WebElement>totalframe=driver.findElements(By.tagName("iframe"));
 	System.out.println(totalframe.size());
+	
+	WebElement frame =driver.findElement(By.id("frame1"));
+	driver.switchTo().frame(frame);
+	
+	WebElement framename=driver.findElement(By.id("sampleHeading"));
+	System.out.println(framename.getText());
+	
+	driver.switchTo().defaultContent();
+	
 		
 		
 	}
