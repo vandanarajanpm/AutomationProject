@@ -14,7 +14,7 @@ public void initializeBrowser() {
 
 public void browserCloseAndQuit() {
 	//driver.close();
-	driver.quit();
+	//driver.quit();
 }
 
 	public static void main(String[] args) {
