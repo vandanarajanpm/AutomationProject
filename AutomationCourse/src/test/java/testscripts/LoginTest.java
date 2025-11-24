@@ -1,54 +1,54 @@
 package testscripts;
 
+import java.io.IOException;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
 import pages.LoginPage;
 import seleniumBasics.DemoBase;
+import utility.ExcelUtility;
 
 public class LoginTest extends DemoBase {
 	@Test
-	public void verifyWhetherUserIsAbleToLoginWithValidCredential() {
+	public void verifyWhetherUserIsAbleToLoginWithValidCredential() throws IOException {
+		String usernamevalue=ExcelUtility.getStringData(0, 0, "Loginpage");
+		String passwordvalue=ExcelUtility.getStringData(0, 1, "Loginpage");
 		LoginPage loginpage=new LoginPage(driver);
-		loginpage.enterUserNameOnUserNameFeild();
-		loginpage.enterPasswordOnPasswordFeild();
+		loginpage.enterUserNameOnUserNameFeild(usernamevalue);
+		loginpage.enterPasswordOnPasswordFeild(passwordvalue);
 		loginpage.loginButtonClick();
 		}
 	@Test
-	public void verifyWhetherUserIsAbleToLoginWithValidUsernameAndInvalidPassword() {
-		WebElement username = driver.findElement(By.id("user-name"));
-		username.sendKeys("standard_user");
+	public void verifyWhetherUserIsAbleToLoginWithValidUsernameAndInvalidPassword() throws IOException {
+		String usernamevalue=ExcelUtility.getStringData(1, 0, "Loginpage");
+		String passwordvalue=ExcelUtility.getStringData(1, 1, "Loginpage");
+		LoginPage loginpage=new LoginPage(driver);
+		loginpage.enterUserNameOnUserNameFeild(usernamevalue);
+		loginpage.enterPasswordOnPasswordFeild(passwordvalue);
+		loginpage.loginButtonClick();
 		
-		WebElement password = driver.findElement(By.id("password"));
-		password.sendKeys("abc");
-		
-		WebElement login = driver.findElement(By.id("login-button"));
-		login.click();
-	}
-	@Test
-	
-	public void verifyWhetherUserIsAbleToLoginWithInValidUsernmaeAndValidPassword() {
-		WebElement username = driver.findElement(By.id("user-name"));
-		username.sendKeys("xyz");
-		
-		WebElement password = driver.findElement(By.id("password"));
-		password.sendKeys("secret_sauce");
-		
-		WebElement login = driver.findElement(By.id("login-button"));
-		login.click();
 		}
 	@Test
-	public void VerifyWhetherUserIsAbleToLoginWithInvalidUsernameAndInvalidPassword() {
-		WebElement username = driver.findElement(By.id("user-name"));
-		username.sendKeys("abcd");
-		
-		WebElement password = driver.findElement(By.id("password"));
-		password.sendKeys("xyzz");
-		
-		WebElement login = driver.findElement(By.id("login-button"));
-		login.click();
-	}
+	
+	public void verifyWhetherUserIsAbleToLoginWithInValidUsernmaeAndValidPassword() throws IOException {
+		String usernamevalue=ExcelUtility.getStringData(2, 0, "Loginpage");
+		String passwordvalue=ExcelUtility.getStringData(2, 1, "Loginpage");
+		LoginPage loginpage=new LoginPage(driver);
+		loginpage.enterUserNameOnUserNameFeild(usernamevalue);
+		loginpage.enterPasswordOnPasswordFeild(passwordvalue);
+		loginpage.loginButtonClick();
+		}
+	@Test
+	public void VerifyWhetherUserIsAbleToLoginWithInvalidUsernameAndInvalidPassword() throws IOException {
+		String usernamevalue=ExcelUtility.getStringData(3, 0, "Loginpage");
+		String passwordvalue=ExcelUtility.getStringData(3, 1, "Loginpage");
+		LoginPage loginpage=new LoginPage(driver);
+		loginpage.enterUserNameOnUserNameFeild(usernamevalue);
+		loginpage.enterPasswordOnPasswordFeild(passwordvalue);
+		loginpage.loginButtonClick();
+		}
 }
 	
 	

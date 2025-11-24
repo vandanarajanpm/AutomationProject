@@ -19,11 +19,11 @@ public class LoginPage {
      
      
      
-     public void enterUserNameOnUserNameFeild() {
-    	 username.sendKeys("standard_user");
+     public void enterUserNameOnUserNameFeild(String usernamevalue) {
+    	 username.sendKeys(usernamevalue);
      }
-     public void enterPasswordOnPasswordFeild() {
-    	 password.sendKeys("secret_sauce");
+     public void enterPasswordOnPasswordFeild(String passwordvalue) {
+    	 password.sendKeys(passwordvalue);
      }
      public void loginButtonClick() {
     	 login.click();
