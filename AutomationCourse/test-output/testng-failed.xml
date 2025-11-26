@@ -5,7 +5,7 @@
     <classes>
       <class name="testscripts.LoginTest">
         <methods>
-          <include name="verifyThatClickingTheCrossIconClearsTheIncorrectTextFromTheUsernameFeild"/>
+          <include name="verifyWhetherUserIsAbleToLoginWithValidCredential"/>
           <include name="initializeBrowser"/>
           <include name="browserCloseAndQuit"/>
         </methods>
